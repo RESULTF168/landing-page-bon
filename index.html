@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải trí</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1111654070407577');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1111654070407577&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <div class="app">
+        <div class="content">
+            <div class="logo">
+                <img src="images/logo.webp" alt="" loading="lazy">
+            </div>
+            <div class="bg-qt">
+                <div class="countdown">
+                    <div class="time-block time-block1">
+                        <div class="number" id="day">00</div>
+                        <div class="label">Ngày</div>
+                    </div>
+                    <div class="time-block time-block2">
+                        <div class="number" id="hour">00</div>
+                        <div class="label">Giờ</div>
+                    </div>
+                    <div class="time-block time-block3">
+                        <div class="number" id="minute">00</div>
+                        <div class="label">Phút</div>
+                    </div>
+                    <div class="time-block time-block4">
+                        <div class="number" id="second">00</div>
+                        <div class="label">Giây</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn1">
+                <a href="https://qq8806.com/adsth28a" target="_blank">
+                    <img src="images/btn3.webp" alt="" loading="lazy">
+                </a>
+            </div>
+
+            <div class="btn">
+                <a href="https://qq8806.com/adsth28a" target="_blank">
+                    <img src="images/btn1.webp" alt="" loading="lazy">
+                </a>
+                <a href="https://qq8806.com/adsth28a" target="_blank">
+                    <img src="images/btn2.webp" alt="" loading="lazy">
+                </a>
+            </div>
+            <div class="text">
+                <img src="images/text.webp" alt="" loading="lazy">
+            </div>
+        </div>
+        <div class="footer">
+            <img src="images/footer.webp" alt="" loading="lazy">
+        </div>
+        <!-- <div class="overlay"></div>
+        <div class="popup" id="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p class="title-popup"><img src="./images/note.webp" alt=""
+                    loading="lazy"></p>
+            <p class="description"><img src="./images/content1.webp" alt=""
+                    loading="lazy"></p>
+
+            <a href="https://qq8806.com/adsth28a" target="_blank"
+                class="btn-km"><img src="./images/btn_km.webp" alt=""
+                    loading="lazy"></a>
+        </div> -->
+    </div>
+
+    <script>
+
+        // function showPopup() {
+        //     document.getElementById("popup").style.display = "block";
+        // }
+
+        // function closePopup() {
+        //     document.getElementById("popup").style.display = "none";
+        //     document.querySelector(".overlay").style.display = "none";
+        // }
+
+        // window.onload = function () {
+        //     setTimeout(showPopup, 500);
+        // };
+
+        // ========== COUNTDOWN RANDOM ==========
+        const dayElem = document.getElementById("day");
+        const hourElem = document.getElementById("hour");
+        const minuteElem = document.getElementById("minute");
+        const secondElem = document.getElementById("second");
+
+        const timeList = [
+            1 * 24 * 3600 + 1 * 3600 + 25 * 60 + 36,
+        ];
+
+        let totalSeconds = timeList[Math.floor(Math.random() * timeList.length)];
+
+        function updateCountdown() {
+            const days = Math.floor(totalSeconds / (24 * 3600));
+            const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            dayElem.textContent = days.toString().padStart(2, "0");
+            hourElem.textContent = hours.toString().padStart(2, "0");
+            minuteElem.textContent = minutes.toString().padStart(2, "0");
+            secondElem.textContent = seconds.toString().padStart(2, "0");
+
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            } else {
+                clearInterval(timer);
+            }
+        }
+
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+    </script>
+
+
+
+</body></html>
